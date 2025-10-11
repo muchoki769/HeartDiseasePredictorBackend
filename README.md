@@ -11,6 +11,8 @@ Cardiovascular diseases are the leading cause of death globally. This solution p
 
 ## 🚀 Live Demo
 
+![Heart Disease Risk Prediction](public/HeartDiseaseRiskPredictor.PNG)
+
 - **Frontend Application**: []
 - **Backend API**: []
 - **API Documentation**: `/health`, `/features`, `/predict`
