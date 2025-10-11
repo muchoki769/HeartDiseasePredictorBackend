@@ -40,5 +40,5 @@ Thumbs.db
 # Only ignore heart disease model
 heart_disease_model.pkl
 
-
+.env*
 
