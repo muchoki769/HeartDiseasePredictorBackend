@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Flask instance folder
+instance/
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# IDE / OS files
+.vscode/
+.DS_Store
+Thumbs.db
+# Database
+*.db
+*.sqlite3
+
+# # ML / model files
+# *.pkl
+# Only ignore heart disease model
+heart_disease_model.pkl
+
+
+
