@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "heart-disease-risk-predictor"
+version = "0.1.0"
+description = ""
+authors = ["David"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "2.3.3"
+flask-cors = "4.0.0"
+pandas = "2.0.3"
+numpy = "1.24.3"
+scikit-learn = "1.3.0"
+joblib = "1.3.2"
+gunicorn = "21.2.0"
+waitress = "2.1.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
