@@ -1,5 +1,0 @@
-runtime: python311
-entrypoint: gunicorn -b :8080 app:app
-
-env_variables:
-  PYTHON_VERSION: "3.11"
