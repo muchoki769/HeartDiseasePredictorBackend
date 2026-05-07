@@ -169,7 +169,8 @@ class HeartDiseaseModel:
         else:    
                   explanation += "Maintain your current healthy lifestyle with regular exercise and balanced diet."
 
-                  return explanation
+        return explanation
+
             # Initialize model
 model = HeartDiseaseModel()
 
@@ -236,37 +237,27 @@ def get_features():
      return jsonify(feature_descriptions)
 
 if __name__ == '__main__':
-    # app.run(debug=True, host='0.0.0.0', port=5000) 
     import os
+    PORT = int(os.environ.get('PORT', 5000))
+
     if os.name == 'nt':  # Windows
         try:
-          from waitress import serve
-          print("🔹 Running on Waitress (Windows production)")
-          print("🔹 Server running at: http://0.0.0.0:5000")
-          print("🔹 Press Ctrl+C to stop the server")
-          serve(app, host='0.0.0.0', port=5000)
+            from waitress import serve
+            print("🔹 Running on Waitress (Windows production)")
+            print(f"🔹 Server running at: http://0.0.0.0:{PORT}")
+            print("🔹 Press Ctrl+C to stop the server")
+            serve(app, host='0.0.0.0', port=PORT, debug=True)
         except ImportError:
-              print("⚠️  Waitress not installed, falling back to Flask development server")
-              print("💡 Install waitress: pip install waitress")
-        app.run(debug=False, host='0.0.0.0', port=5000)
+            print("⚠️  Waitress not installed, falling back to Flask development server")
+            print("💡 Install waitress: pip install waitress")
+            app.run(debug=False, host='0.0.0.0', port=PORT)
     else:
-        # use Gunicorn from terminal:
-        #  print("🔹 On Linux/macOS, run with Gunicorn: gunicorn -w 4 -b 0.0.0.0:5000 app:app")
-        #  app.run(debug=False, host='0.0.0.0', port=5000)  
-        # Check if running in production environment
         if os.environ.get('PRODUCTION'):
-             print("🔹 Production mode - should use Gunicorn directly")
-             print("💡 Run with: gunicorn -w 4 -b 0.0.0.0:5000 app:app") 
-
-            # In production, this shouldn't be reached when using gunicorn directly
-             from gunicorn.app.base import BaseApplication   
-             # Fallback to Flask server if gunicorn isn't available
-             app.run(debug=False, host='0.0.0.0', port=5000) 
+            print("🔹 Production mode - should use Gunicorn directly")
+            print(f"💡 Run with: gunicorn -w 4 -b 0.0.0.0:{PORT} app:app")
         else:
-              # Development mode
-             print("🔹 Development mode - using Flask server")
-             print("🔹 For production, run with: gunicorn -w 4 -b 0.0.0.0:5000 app:app") 
-             app.run(debug=True, host='0.0.0.0', port=5000)        
-         
+            print("🔹 Development mode - using Flask server")
+            print(f"🔹 For production, run with: gunicorn -w 4 -b 0.0.0.0:{PORT} app:app")
+            app.run(debug=True, host='0.0.0.0', port=PORT)
  
         

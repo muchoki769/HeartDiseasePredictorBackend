@@ -14,7 +14,7 @@ Cardiovascular diseases are the leading cause of death globally. This solution p
 ![Heart Disease Risk Prediction](Public/HeartDiseaseRiskPredictor.PNG)
 
 - **Frontend Application**: [https://heartdiseasepredictorfrontend.onrender.com]
-- **Backend API**: [https://heartdiseasepredictorbackend.onrender.com]
+- **Backend API**: []
 - **API Documentation**: `/health`, `/features`, `/predict`
 
 ## 📊 Presentation
@@ -29,7 +29,7 @@ Cardiovascular diseases are the leading cause of death globally. This solution p
 - **Font Awesome** - Icons
 
 ### Backend
-- **Python 3.11** - Core programming language
+- **Python 3.14** - Core programming language
 - **Flask** - Web framework and API
 - **Scikit-learn** - Machine learning library
 - **Pandas & NumPy** - Data processing
@@ -49,3 +49,12 @@ Cardiovascular diseases are the leading cause of death globally. This solution p
 ```bash
 pip install -r requirements.txt
 python app.py
+```
+
+## ☁️ Deploying to Google Cloud
+- For App Engine: use `app.yaml` with `runtime: python314`
+- For Cloud Run: use the provided `Dockerfile` and listen on port `8080`
+- Production server command: `gunicorn -w 4 -b :$PORT app:app`
+
+
+
